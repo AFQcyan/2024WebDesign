@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: #333;
+}
+body {
+    height: 100vh;
+}
+a {
+    color: #333;
+}
+img {   
+    object-fit: cover;
+}
+#page {
+    width: 100%;
+    height: 100%;
+}
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 400px calc(100% - 200px - 400px);
+    height: calc(100% - 120px);
+}
+/* header */
+header {
+    width: 100%;
+    height: 849px;
+}
+.logo img {
+    width: 100%;
+}
+.menu {
+    width: 90%;
+    border: 1px solid black;
+    margin: 30px auto;
+}
+.menu a {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    font-weight: bold;
+}   
+.menu > li:hover > a {
+    background-color: #e93131;
+    color: white;
+}
+.menu > li > ul {
+    transition: 1s;
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgb(255, 180, 180);
+}
+.menu > li:hover > ul {
+    max-height: 200px;
+}
+.menu > li > ul > li:hover > a {
+    background-color: rgb(255, 132, 132);
+    color: white;
+}
+.spotmenu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+/* contents */
+.contents {
+    display: grid;
+    width: 100%;
+    height: calc(100vh - 120px);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+}
+/* banner */
+.banner {
+    width: 400px;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    padding: 5px;    
+}
+.banner a {
+    width: 100%;
+}
+.inner {
+    width: 100%;
+    height: 80%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.banner img {
+    width: 125%;
+    position: absolute;
+    top: -55%;   
+    left: -5%;   
+    filter: brightness(55%);
+    z-index: 0;
+}   
+.banner-txt, .arrow{
+    z-index: 1;
+}
+.banner-txt *, .arrow {
+    color: white;
+}
+
+.arrow {
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+}
+/* notice */
+.tab {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+.tab a {
+    display: block;
+    width: 100px;
+    border: 1px solid black;
+    border-bottom: none;
+    text-align: center;
+    padding: 10px;
+}
+.notice {
+    width: 400px;
+    height: 100%;
+    border: 1px solid black;
+    padding: 20px;
+}
+.notice p {
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    padding: 15px;
+}
+.notice p a {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* gallary */
+.gallary {
+    width: 400px;
+    height: 100%;
+    border: 1px solid black;
+    padding: 20px;
+}
+.gallary .info-tab {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.gallary .info-tab a{
+    display: block;
+}
+.gallary .img-cont {
+    text-align: center;
+    padding: 15px;
+}
+.gallary img {
+    width: 100%;
+    display: block;
+    height: 159px;
+    margin: 0 auto;
+}
+.gallary p {
+    padding: 5px;
+}
+/* quick */
+.quick {
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid black;
+    padding: 10px;
+}
+.quick a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.quick-cont {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.quick img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+.slide {
+    border: 1px solid black ;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.slide a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+.slide img {
+    display: inline-block;
+    width: 125%;
+    height: 100%;
+    position: absolute;
+}
+.slide a:nth-child(1) {
+    left: 0;
+    animation: ani1 8s infinite;
+}
+
+.slide a:nth-child(2) {
+    left: 100%;
+    animation: ani2 8s infinite;
+}
+
+.slide a:nth-child(3) {
+    left: 100%;
+    animation: ani3 8s infinite;
+}
+.slide a:nth-child(1) > img {
+    left: -40px;
+}
+
+.slide a:nth-child(2) > img {
+    left: -0px;
+}
+
+.slide a:nth-child(3) > img {
+    left: 0px;
+    
+}
+@keyframes ani1 {
+    0% {
+        left: 0;
+    }
+    30% {
+        left: 0;
+    }
+    33% {
+        left: -100%;
+    }
+    33.1% {
+        left: 100%;
+    }
+    96% {
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+@keyframes ani2 {
+    0% {
+        left: 100%;
+    }
+    30% {
+        left: 100%;
+    }
+    33% {
+        left: 0%;
+    }
+    63% {
+        left: 0%;
+    }
+    66% {
+        left: -100%;
+    }
+    66.01% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+@keyframes ani3 {
+    0% {
+        left: 100%;
+    }
+    63% {
+        left: 100%;
+    }
+    66% {
+        left: 0;
+    }
+    96% {
+        left: 0%;
+    }
+    99.999% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+footer {
+    border-top: 1px solid black;
+    width: 100%;
+    height: 120px;
+    display: grid;
+    grid-template-columns: 200px calc(100% - 200px);
+}
+footer .logo {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    filter: grayscale(100%);
+    border-right: 1px solid black;
+}
+footer img {
+    width: 100%;
+}
+.footer-detail {
+    width: 100%;
+    height: 120px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+.footer-detail > div {
+    padding: 10px;
+    padding-left: 30px;
+}
+.footer-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;  
+    border-bottom: 1px solid black;  
+}
+/* popup */
+.popup {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+.popup-inner {
+    background-color: #fff;
+    position: fixed;
+    width: 600px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+.popup-inner h3 {
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+.popup-inner p {
+    padding: 10px;
+}
+.popup-inner .close-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}
