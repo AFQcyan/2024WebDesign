@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+:root {
+  --slide-height: 400px;
+}
+#page {
+  width: 100%;
+}
+header a {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  display: block;
+}
+footer .logo img {
+  filter: grayscale(100%);
+}
+.menu {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 50px;
+}
+.menu > li:hover > a {
+  background-color: #333;
+  color: white;
+}
+.menu > li > ul > li:hover > a {
+  background-color: #666;
+  color: white;
+}
+/* menu css */
+.menu > li > ul {
+  transition: 1s;
+  max-height: 0;
+  overflow: hidden;
+}
+.menu > li:hover > ul {
+  max-height: 200px;
+}
+.spot-menu {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  display: grid;
+  grid-template-columns: 200px calc(100% - 200px);
+  height: 850px;
+}
+.slide-hidden {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #afa;
+  padding: 10px;
+}
+.link img {
+  width: 125px;
+  object-fit: cover;
+}
+.link p {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.slide {
+  width: 100%;
+  height: 400px;
+  margin-top: 0;
+  position: absolute;
+}
+.slide a {
+  display: block;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.slide img {
+  width: 100%;
+  height: 400px;
+  filter: brightness(65%);
+}
+.banner-txt {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 30px;
+}
+.arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  font-weight: bold;
+}
+.slide-txt {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+.slide.first {
+  animation: slide-first 12s infinite;
+}
+.slide.second {
+  animation: slide-second 12s infinite;
+}
+@keyframes slide-first {
+  0% {
+    top: 0;
+  }
+  8% {
+    top: 0px;
+  }
+  12% {
+    top: -400px;
+  }
+  20% {
+    top: -400px;
+  }
+  24% {
+    top: -800px;
+  }
+  32% {
+    top: -800px;
+  }
+  36% {
+    top: -1200px;
+  }
+  45% {
+    top: -1200px;
+  }
+  50% {
+    top: -1600px;
+  }
+  50.01% {
+    top: 800px;
+  }
+  58% {
+    top: 800px;
+  }
+  62% {
+    top: 400px;
+  }
+  70% {
+    top: 400px;
+  }
+  74% {
+    top: 0px;
+  }
+  82% {
+    top: 0px;
+  }
+  86% {
+    top: -400px;
+  }
+  95% {
+    top: -400px;
+  }
+  100% {
+    top: -800px;
+  }
+}
+@keyframes slide-second {
+  0% {
+    top: 1200px;
+  }
+  8% {
+    top: 1200px;
+  }
+  12% {
+    top: 800px;
+  }
+  20% {
+    top: 800px;
+  }
+  24% {
+    top: 400px;
+  }
+  32% {
+    top: 400px;
+  }
+  36% {
+    top: 0px;
+  }
+  45% {
+    top: 0px;
+  }
+  50% {
+    top: -400px;
+  }
+  58% {
+    top: -400px;
+  }
+  62% {
+    top: -800px;
+  }
+  70% {
+    top: -800px;
+  }
+  74% {
+    top: -1200px;
+  }
+  82% {
+    top: -1200px;
+  }
+  86% {
+    top: -1600px;
+  }
+  95% {
+    top: -1600px;
+  }
+  99.99% {
+    top: -2000px;
+  }
+  100% {
+    top: 0;
+  }
+}
+.web-banner {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: #afa;
+}
+.web-banner .inner {
+  height: 160px;
+  margin-top: 20px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+.web-banner img {
+  height: 160px;
+  object-fit: cover;
+}
+.notice-gallary {
+  width: 100%;
+  height: 250px;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto 0 auto;
+}
+.tabs > button {
+  border: 1px solid black;
+  background-color: #fff;
+  padding: 5px 15px;
+  width: 100px;
+}
+.tab {
+  display: none;
+  border: 1px solid black;
+  width: 90%;
+  margin: 0 auto;
+}
+.tab:not(.active) {
+  display: none !important;
+}
+.tab.notice.active {
+  display: block;
+}
+.tab.gallary.active {
+  display: grid;
+}
+.tabs > button.active {
+  font-weight: bold;
+  background-color: rgb(221, 233, 114);
+}
+.tab.notice {
+  padding: 20px;
+}
+.tab.notice p {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+.tab.gallary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 50px;
+  padding: 20px;
+}
+.tab.gallary img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+footer {
+  width: 100%;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  text-align: center;
+}
+.popup {
+  width: 600px;
+  height: 300px;
+  background-color: #fff;
+  position: fixed;
+  top: 35%;
+  left: 35%;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  display: none;
+}
+.popup p {
+  line-height:45px;
+}
+.popup button {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
